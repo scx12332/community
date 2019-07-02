@@ -21,18 +21,18 @@
         </div>
 
         <ul class="nav navbar-nav mr-auto navbar-collapse">
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=Iv1.6525d5de46b824ef&redirect_uri=http://localhost:8887/callback&scope=user&state=1">Login</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Me
+
+            <li class="nav-item dropdown" th:if="${session.user!=null}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" th:text="${session.user.getName()}">
                     <span class="caret-handle"></span></a>
                 <ul class="dropdown-menu" >
                     <li><a class="dropdown-item" href="#">Message Center</a></li>
                     <li><a class="dropdown-item" href="#">Personal Infomation</a></li>
                     <li><a class="dropdown-item" href="#">Exit</a></li>
                 </ul>
+            </li>
+            <li class="nav-item" th:if="${session.user==null}">
+                <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=Iv1.6525d5de46b824ef&redirect_uri=http://localhost:8887/callback&scope=user&state=1">Login</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
