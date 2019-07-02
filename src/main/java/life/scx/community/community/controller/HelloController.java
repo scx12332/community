@@ -1,4 +1,4 @@
-package life.scx.community.community;
+package life.scx.community.community.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
